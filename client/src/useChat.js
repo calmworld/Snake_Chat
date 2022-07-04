@@ -4,4 +4,36 @@ import { useEffect, useRef, useState } from "react";
  const NewMsgEvent = "newMsg";
  const SocketServerURL = "http://localhost:6060";
 
+ const useChat = (roomId) => {
+    const [messages, setMessages] = useState([]);
+    const socketRef = useRef();
+  
+    useEffect(() => {
+      socketRef.current = socketIOClient(SocketServerURL, {
+        query: { roomId },
+      });
+  
+      socketRef.current.on(NewMsgEvent, (message) => {
+        const incomingMessage = {
+          ...message,
+          ownedByCurrentUser: message.senderId === socketRef.current.id,
+        };
+        setMessages((messages) => [...messages, incomingMessage]);
+      });
+  
+      return () => {
+        socketRef.current.disconnect();
+      };
+    }, [roomId]);
+  
+    const sendMessage = (messageBody) => {
+      socketRef.current.emit(NewMsgEvent, {
+        body: messageBody,
+        senderId: socketRef.current.id,
+      });
+    };
+  
+    return { messages, sendMessage };
+  };
+
  export default useChat;

@@ -14,7 +14,7 @@ const Home = () => {
         <div className="home-container">
             <input
             type="text"
-            placeholder="Enyter chat room name.."
+            placeholder="Enter chat room name.."
             value={roomName}
             onChange={handleRoomNameChange}
             className="text-input-field"

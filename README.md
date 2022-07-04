@@ -27,3 +27,11 @@ Node, React, Socket.io, CSS
 - cd into client folder and in your console run ```npm install```
 - run ```npm start``` to start react app
 - open ```http://localhost:3000``` on your browser
+
+# Instructions
+- Enter desired ChatRoom name in Home page.
+- Copy ChatRoom URL 
+- Open another broswer page >> Paste previously-copied URL
+- Start Chatting! 
+
+# Currently, Application Can only Run Locally!

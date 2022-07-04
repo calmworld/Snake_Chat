@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from 'react-router-dom';
 
 import useChat from "../useChat";
+import "./ChatRoom.css";
 
 const ChatRoom = () => {
   const { roomId } = useParams;
@@ -18,7 +19,7 @@ const ChatRoom = () => {
   };
   return (
     <div className="chat-room-container">
-      <h1 className="room-name">Room: {roomId}</h1>
+      <h1 className="room-name"> {roomId} </h1>
       <div className="messages-container">
         <ol className="messages-list">
           {messages.map((message, i) => (

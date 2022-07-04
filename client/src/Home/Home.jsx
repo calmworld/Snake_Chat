@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "./Home.css"
 
 const Home = () => {
     const [roomName, setRoomName] = React.useState("");
@@ -13,13 +14,13 @@ const Home = () => {
         <div className="home-container">
             <input
             type="text"
-            placeholder="Room"
+            placeholder="Enyter chat room name.."
             value={roomName}
             onChange={handleRoomNameChange}
             className="text-input-field"
             />
             <Link to={`/${roomName}`} className="enter-room-button">
-            Join room
+            Join
             </Link>
         </div>
     );

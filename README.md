@@ -19,8 +19,8 @@ Node, React, Socket.io, CSS
 
 
 # To run Backend server
-- cd into api folder and in your console run ```npm install```
-- run ```node server.js```
+- cd into server folder and in your console run ```npm install```
+- run ```nodemon server.js```
 - open ```http://localhost:6060``` on your browser
 
 # To run Frontend 
